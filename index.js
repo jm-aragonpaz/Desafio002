@@ -10,6 +10,7 @@ class Contenedor {
         try {
             product.id = this.id++
             const data = await fs.promises.readFile(this.file, 'utf-8')
+            console.log(data)
             const items = JSON.parse(data);
             let idProd=0
             if (items.length > 0){
@@ -85,7 +86,7 @@ async deleteAll(){
 }
 
 
-const contenedor=new Contenedor('data/productos.txt')
+const contenedor=new Contenedor('productos.txt')
 contenedor.save(    {                                                                                                                                                    
     "title": "Calculadora",                                                                                                                              
     "price": 234.56,                                                                                                                                     
