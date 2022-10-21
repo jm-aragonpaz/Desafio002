@@ -67,7 +67,7 @@ async deleteById(id){
     const productStr = JSON.stringify(product);
         // items.splice(items.indexOf(product),1)
         // console.log(items)
-    await fs.promises.writeFile('producto.txt', productStr)
+    await fs.promises.writeFile(this.file, productStr)
     }catch(error){
         return console.log('Producto no encontrado')
     }
@@ -88,8 +88,27 @@ async deleteAll(){
 
 
 const contenedor=new Contenedor('productos.txt')
-contenedor.save(    {                                                                                                                                                    
-    "title": "Escuadra",                                                                                                                              
-    "price": 123.45,                                                                                                                                     
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",                                                                                                                                                                                      
-  }).then((res)=>console.log(res));
+// contenedor.save(    {                                                                                                                                                    
+//     "title": "Escuadra",                                                                                                                              
+//     "price": 123.45,                                                                                                                                     
+//     "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",                                                                                                                                                                                      
+//   }).then((res)=>console.log(res));
+
+//   contenedor.save(    {                                                                                                                                                    
+//     "title": "Calculadora",                                                                                                                              
+//     "price": 234.56,                                                                                                                                     
+//     "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",                                                                                                                                                                                      
+//   }).then((res)=>console.log(res));
+
+// contenedor.save(    {                                                                                                                                                    
+//     "title": "Globo Terraqueo",                                                                                                                              
+//     "price": 345.67,                                                                                                                                     
+//     "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/globe-earth-geograhy-planet-school-256.png",                                                                                                                                                                                      
+//     }).then((res)=>console.log(res));
+
+
+// contenedor.getAll().then((res) => console.log(res))
+
+contenedor.getById(3).then((res)=>console.log(res));
+// contenedor.deleteById(2);
+// contenedor.deleteAll();
