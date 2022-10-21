@@ -8,13 +8,14 @@ class Contenedor {
 
     async save(product){
         try {
+            console.log(this.file)
             product.id = this.id++
             const data = await fs.promises.readFile(this.file, 'utf-8')
             console.log(data)
             const items = JSON.parse(data);
             let idProd=0
             if (items.length > 0){
-                products=[];
+                let products=[];
                 items.forEach(el => {
                     products.push(el.id)
                 } )
@@ -88,7 +89,7 @@ async deleteAll(){
 
 const contenedor=new Contenedor('productos.txt')
 contenedor.save(    {                                                                                                                                                    
-    "title": "Calculadora",                                                                                                                              
-    "price": 234.56,                                                                                                                                     
-    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-256.png",                                                                                                                                                                                      
+    "title": "Escuadra",                                                                                                                              
+    "price": 123.45,                                                                                                                                     
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-256.png",                                                                                                                                                                                      
   }).then((res)=>console.log(res));
